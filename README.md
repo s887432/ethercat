@@ -12,15 +12,28 @@ $./configure --prefix=/home/user/WorkArea/app/ethercat-hg/output --with-linux-di
 
 $make -j8
 
-# TODO...
+$make install
+
 # make modules
-$make ARCH-arm CROSS_COMPILE=arm-none-linux-gnueabi- modules
+$make ARCH-arm CROSS_COMPILE=arm-none-linux-gnueabihf- modules
 
 $mkdir output/modules
 
-$make doc
+$cp devices/ec_generic.ko output/modules
 
-$make install
+$cp master/ec_master.ko output/modules
+
+tar -cjf output.tar.bz2 output
+
+# TODO...
+
+#in target board
+copy all files from output folder to its position
+
+$cp ec_master.ko /lib/mkdules/xxxx/
+$depmod
+
+
 
 # Ethercat test
 $/etc/init.d/ethercat start
