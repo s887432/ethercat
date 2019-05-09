@@ -1,3 +1,7 @@
+#Source
+http://lists.etherlab.org/pipermail/etherlab-dev/2018/000668.html
+
+
 diff --git a/drivers/misc/ethercat_master/devices/generic.c b/drivers/misc/ethercat_master/devices/generic.c
 index 9f19a79..11ed091 100644
 --- a/drivers/misc/ethercat_master/devices/generic.c
