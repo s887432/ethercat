@@ -15,12 +15,17 @@ $make -j8
 # TODO...
 # make modules
 $make ARCH-arm CROSS_COMPILE=arm-none-linux-gnueabi- modules
+
 $mkdir output/modules
+
 $make doc
+
 $make install
 
 # Ethercat test
 $/etc/init.d/ethercat start
+
 $insmod output/modules/ec_generic.ko
+
 $ethercat pdos
 
